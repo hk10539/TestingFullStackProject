@@ -1,7 +1,6 @@
 package org.crossbrowsertesting.web;
 
 import org.crossbrowsertesting.utils.GetScreenshot;
-import org.crossbrowsertesting.utils.StaticString;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -40,7 +39,7 @@ public class URLVerification {
             Thread.sleep(5000);
             GetScreenshot.screenshot(driver);
         }catch (Exception e){
-            e.printStackTrace();
+            throw new RuntimeException(e);
         }
     }
     @AfterMethod

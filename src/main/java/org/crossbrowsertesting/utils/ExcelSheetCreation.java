@@ -1,12 +1,12 @@
-import org.apache.poi.hssf.usermodel.HSSFRow;
+package org.crossbrowsertesting.utils;
+
 import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
-import org.crossbrowsertesting.utils.FolderCreate;
 
 import java.io.FileOutputStream;
 import java.util.Date;
 
-public class Main {
+public class ExcelSheetCreation {
     public static String filename = null;
     public static HSSFWorkbook workbook = new HSSFWorkbook();
     public static HSSFSheet sheet1 = workbook.createSheet("Data");
@@ -24,5 +24,3 @@ public class Main {
         }
     }
 }
-
-
