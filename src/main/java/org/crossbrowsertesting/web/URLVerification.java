@@ -1,5 +1,6 @@
 package org.crossbrowsertesting.web;
 
+import org.crossbrowsertesting.utils.GetScreenshot;
 import org.crossbrowsertesting.utils.StaticString;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -32,10 +33,12 @@ public class URLVerification {
         }
     }
     @Test
-    public void URLVerification(){
+    public void URLverification(){
         try{
             driver.get(StaticString.url);
-            driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+            driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+            Thread.sleep(5000);
+            GetScreenshot.screenshot(driver);
         }catch (Exception e){
             e.printStackTrace();
         }
