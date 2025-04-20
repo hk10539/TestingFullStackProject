@@ -14,7 +14,7 @@ public class DatabaseConnection {
             String password = props.getProperty("db.password");
             String driver = props.getProperty("db.driver");
             String baseUrl = props.getProperty("db.url");
-            String finalUrl = baseUrl.replace("springboot_dev", dbName);
+            String finalUrl = baseUrl.replace("springboot", dbName);
             System.out.println(finalUrl);
             System.out.println(baseUrl);
             Class.forName(driver);
