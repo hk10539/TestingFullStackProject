@@ -2,10 +2,9 @@ package org.crossbrowsertesting.api;
 
 import io.restassured.response.Response;
 import org.testng.annotations.Test;
-
 import java.sql.Connection;
-
 import static io.restassured.RestAssured.given;
+
 public class DatabaseInput {
     @Test
     public void getMethod() {

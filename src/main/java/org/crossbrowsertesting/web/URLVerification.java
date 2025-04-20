@@ -3,6 +3,7 @@ package org.crossbrowsertesting.web;
 import org.crossbrowsertesting.utils.GetScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.testng.annotations.*;
@@ -18,7 +19,9 @@ public class URLVerification {
     public void beforeMethod(String browser){
         switch (browser.toLowerCase()) {
             case "chrome":
-                driver = new ChromeDriver();
+                ChromeOptions co=new ChromeOptions();
+                co.addArguments("--remote-allow-origins=*");
+                driver = new ChromeDriver(co);
                 break;
             case "firefox":
                 driver = new FirefoxDriver();
