@@ -1,0 +1,14 @@
+<suite name="CrossBrowserTestingSuite" parallel="tests" thread-count="3">
+    <test name="ChromeTest">
+        <parameter name="browser" value="Chrome"/>
+        <parameter name="demo" value="drag_and_drop"/>
+        <groups>
+            <run>
+                <include name="smoke"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="org.crossbrowsertesting.web.URLVerification"/>
+        </classes>
+    </test>
+</suite>

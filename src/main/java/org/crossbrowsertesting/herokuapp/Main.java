@@ -14,6 +14,7 @@ import java.util.Properties;
 public class Main {
     String value = "";
     WebDriver driver;
+    ChromeOptions co;
     Properties props;
     HSSFRow headerRow;
     int rowCount = 1;
@@ -44,10 +45,6 @@ public class Main {
 
     @BeforeMethod
     public void setup() {
-        ChromeOptions co = new ChromeOptions();
-        co.addArguments("--remote-allow-origins=*");
-        driver = new ChromeDriver(co);
-        driver.manage().window().maximize();
     }
 
     @Test
@@ -55,6 +52,10 @@ public class Main {
         if (!Objects.equals(value, "drag_and_drop")) {
             throw new SkipException("Skipping drag_and_drop test");
         }
+        co = new ChromeOptions();
+        co.addArguments("--remote-allow-origins=*");
+        driver = new ChromeDriver(co);
+        driver.manage().window().maximize();
         driver.get(props.getProperty("db.url") + value);
         writeExcel("1", "Shreya", "Singh", "shreya@example.com");
     }
@@ -64,6 +65,10 @@ public class Main {
         if (!Objects.equals(value, "dropdown")) {
             throw new SkipException("Skipping dropdown test");
         }
+        co = new ChromeOptions();
+        co.addArguments("--remote-allow-origins=*");
+        driver = new ChromeDriver(co);
+        driver.manage().window().maximize();
         driver.get(props.getProperty("db.url") + value);
         writeExcel("2", "Amit", "Sharma", "amit@example.com");
     }
@@ -73,6 +78,10 @@ public class Main {
         if (!Objects.equals(value, "dynamic_controls")) {
             throw new SkipException("Skipping dynamic_controls test");
         }
+        co = new ChromeOptions();
+        co.addArguments("--remote-allow-origins=*");
+        driver = new ChromeDriver(co);
+        driver.manage().window().maximize();
         driver.get(props.getProperty("db.url") + value);
         writeExcel("3", "Neha", "Verma", "neha@example.com");
     }
@@ -82,6 +91,10 @@ public class Main {
         if (!Objects.equals(value, "dynamic_content")) {
             throw new SkipException("Skipping dynamic_content test");
         }
+        co = new ChromeOptions();
+        co.addArguments("--remote-allow-origins=*");
+        driver = new ChromeDriver(co);
+        driver.manage().window().maximize();
         driver.get(props.getProperty("db.url") + value);
         writeExcel("4", "Ravi", "Patel", "ravi@example.com");
     }
@@ -91,6 +104,10 @@ public class Main {
         if (!Objects.equals(value, "dynamic_loading")) {
             throw new SkipException("Skipping dynamic_loading test");
         }
+        co = new ChromeOptions();
+        co.addArguments("--remote-allow-origins=*");
+        driver = new ChromeDriver(co);
+        driver.manage().window().maximize();
         driver.get(props.getProperty("db.url") + value);
         writeExcel("5", "Pooja", "Rani", "pooja@example.com");
     }
